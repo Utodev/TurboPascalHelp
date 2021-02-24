@@ -1,0 +1,89 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/0513.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 0513</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>0513</i></center></td>
+</tr></table>
+<pre> TextMode (procedura)     (<a href="0694.html">Crt unit</a>)
+ ------------------------------------
+Seleziona una specifica modalita' testo.
+
+ Dichiarazione:
+ procedure TextMode(Mode: Integer);
+
+ Target:
+Real, Protected
+
+ Note:
+Quando TextMode viene chiamata, la finestra corrente e' resettata all'intero
+schermo, DirectVideo e' messa a True, ChechSnow e' messa a True se viene
+selezionata una modalita' a colori, gli attributi correnti del testo tornano
+quelli di default (come per una chiamata a NormVideo) e la modalita' video
+corrente e' memorizzata in <a href="06A8.html">LastMode</a>.
+
+Utilizzare TextMode(LastMode) ha come effetto il ritorno all'ultima modalita'
+testo attiva. Questo e' utile quando si vuole ritornare al modo-testo dopo
+aver usato una unit grafica (come ad esempio Graph o Graph3).
+
+La seguente chiamata di TextMode
+
+     TextMode(C80 + Font8x8)
+
+riportera' lo schermo a 43 linee e 80 colonne su un'EGA, o a 50 linee e 80
+colonne su una VGA con monitor a colori. TextMode(Lo(LastMode)) disabilita
+sempre le modalita' a 43/50 linee e resetta lo schermo (sebbene lasci la
+modalita' video invariata); mentre
+
+     TextMode(Lo(LastMode) + Font8x8)
+
+manterra' la stessa modalita' video, ma resettera lo schermo a 43 o 50 linee.
+
+Se il vostro sistema e' a 43/50 linee al caricamento del programma, questo
+stato verra' preservato dal codice di avvio della unit Crt, e la variabile
+di finestra che tiene traccia del massimo numero di linee dello schermo
+(WindMax) sara' inizializzata correttamente).
+
+Cosi' e' come andrebbe scritto un programma "educato" che ripristini la
+modalita' video al suo stato iniziale:
+
+ program Video;
+  uses Crt;
+  var OrigMode: Integer;
+  begin
+    OrigMode := LastMode;      { Remember original mode }
+    ...
+    TextMode(OrigMode);
+  end.
+
+ Codice esempio:
+
+<table width="100%" bgcolor="#00007f" ><tr><td><font color="#ffff00"><pre><font color="#ffff00">
+ <font color="#c0c0c0">{TxtMd.PAS}</font>
+
+ <font color="#c0c0c0">{ Esempio per la procedura TextMode }</font>
+
+ <font color="#ffffff"><b>program</b></font> Video;
+ <font color="#c0c0c0">{ Passa a 40 colonne / colore e ritorna
+   Non funzionera' su schede video monocromatiche. }</font>
+ <font color="#ffffff"><b>uses</b></font> Crt;
+ <font color="#ffffff"><b>var</b></font>
+   OrigMode: Integer;
+ <font color="#ffffff"><b>begin</b></font>
+   OrigMode := LastMode;
+   TextMode(CO40);
+   WriteLn(<font color="#00ffff">'Big Characters'</font>);
+   ReadLn;
+   TextMode(OrigMode);
+ <font color="#ffffff"><b>end</b></font>.
+
+</font></font></td></tr></table>
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/0513.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:52 GMT -->
+</html>

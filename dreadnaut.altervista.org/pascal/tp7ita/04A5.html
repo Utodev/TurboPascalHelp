@@ -1,0 +1,67 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/04A5.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 04A5</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>04A5</i></center></td>
+</tr></table>
+<pre> NormVideo (procedure)     <a href="0694.html">(Crt unit)</a>
+ -------------------------------------
+Ripristina gli attributi iniziali del testo, presi dalla posizione
+del cursore all'avvio del programma.
+
+ Dichiarazione:
+ procedure NormVideo;
+
+ Target:
+Real, Protected
+
+ Note:
+C'e' una variabile Byte nella unit Crt --TextAttr-- che mantiene gli
+attributi video correnti. Normvideo ripristina TextAttr al valore che
+aveva quando il programma e' stato lanciato.
+
+ Vedere anche:
+ <a href="0597.html">HighVideo</a>
+ <a href="0499.html">LowVideo</a>
+ <a href="0510.html">TextBackground</a>
+ <a href="0511.html">TextColor</a>
+
+ Codice esempio:
+
+<table width="100%" bgcolor="#00007f" ><tr><td><font color="#ffff00"><pre><font color="#ffff00">
+  <font color="#c0c0c0">{NormVid.PAS}</font>
+
+ <font color="#c0c0c0">{ Esempio per NormVideo, TextBackGround e TextColor }</font>
+
+ <font color="#ffffff"><b>uses</b></font> Crt;
+ <font color="#ffffff"><b>begin</b></font>
+   <font color="#c0c0c0">{ Caratteri verdi su nero }</font>
+   TextColor(Green);
+   TextBackground(Black);
+   WriteLn(<font color="#00ffff">'Hey there!'</font>);
+   <font color="#c0c0c0">{ Caratteri rosso chiaro lampeggianti su grigio }</font>
+   TextColor(LightRed+Blink);
+   TextBackground(LightGray);
+   WriteLn(<font color="#00ffff">'Hi there!'</font>);
+   <font color="#c0c0c0">{ Caratteri gialli su fondo blu }</font>
+   TextColor(<font color="#00ffff">14</font>); <font color="#c0c0c0">{ Giallo = 14 }</font>
+   TextBackground(Blue);
+   WriteLn(<font color="#00ffff">'Ho there!'</font>);
+   NormVideo; <font color="#c0c0c0">{ Attributi originali }</font>
+   WriteLn(<font color="#00ffff">'Back to normal...'</font>);
+ <font color="#ffffff"><b>end</b></font>.
+
+
+</font></font></td></tr></table>
+
+
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/04A5.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:49 GMT -->
+</html>

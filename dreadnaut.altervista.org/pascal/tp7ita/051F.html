@@ -1,0 +1,87 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/051F.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 051F</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>051F</i></center></td>
+</tr></table>
+<pre> Write (procedure)
+ ------------------
+Per file tipati, scrive una variabile in una componente del file.
+Per file di testo, scrive uno o piu' valori nel file.
+
+ Dichiarazione:
+ File tipati:   procedure Write(F, V1 [, V2,...,Vn ] );
+ File di testo: procedure Write( [ var F: Text; ] P1 [,P2,...,Pn ] );
+
+ Target:
+Windows, Real, Protected
+
+ Note:
+Il file deve essere aperto per l'output.
+
+F se specificata e' una variabile di tipo file di testo.
+
+ <i>File di testo</i>
+Ogni P e' un parametro di scrittura che include un espressione di output
+il cui valore sara' scritto nel file.
+
+Un parametro puo' anche contentere le specifiche di larghezza del campo
+e il numero di cifre decimali.
+
+Ogni espressione di output deve essere di tipo Char, Integer, Real, string,
+packed string o Boolean.
+
+ <i>File tipati</i>
+Ogni V e' una variabile dello stesso tipo delle componenti di F.
+
+Per ogni variabile scritta, la posizione corrente nel file e' spostata in
+avanti alla componente successiva.
+
+Se la posizione corrente e' la fine del file, il file viene espanso.
+
+ Valori di ritorno:
+<a href="0479.html">{$I-}</a> IOResult restituisce 0 se l'operazione ha avuto successo,
+      altrimenti un codice di errore diverso da zero.
+
+ Vedere anche:
+ <a href="04BF.html">Read</a>
+ <a href="04C2.html">Readln</a>
+ <a href="0522.html">Writeln</a>
+
+ Codice esempio:
+
+<table width="100%" bgcolor="#00007f" ><tr><td><font color="#ffff00"><pre><font color="#ffff00">
+  <font color="#c0c0c0">{Eof.PAS}</font>
+
+ <font color="#c0c0c0">{Esempio per le funzione Eof, Read, and Write function (file di testo).}</font>
+
+ <font color="#c0c0c0">{ Sotto Windows usare: }</font>
+ <font color="#c0c0c0">{ uses WinCrt, WinDos; }</font>
+
+ <font color="#ffffff"><b>var</b></font>
+   F: Text;
+   Ch: Char;
+ <font color="#ffffff"><b>begin</b></font>
+   <font color="#c0c0c0">{ Prende il file da leggere dalla line di comando }</font>
+   Assign(F, ParamStr(<font color="#00ffff">1</font>));
+   Reset(F);
+   <font color="#ffffff"><b>while</b></font> <font color="#ffffff"><b>not</b></font> Eof(F) <font color="#ffffff"><b>do</b></font>
+   <font color="#ffffff"><b>begin</b></font>
+     Read(F, Ch);
+     Write(Ch);  <font color="#c0c0c0">{ Visualizza il file di testo }</font>
+   <font color="#ffffff"><b>end</b></font>;
+ <font color="#ffffff"><b>end</b></font>.
+
+</font></font></td></tr></table>
+
+
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/051F.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:56 GMT -->
+</html>

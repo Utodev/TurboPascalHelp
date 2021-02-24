@@ -1,0 +1,41 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/0480.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:38:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 0480</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>0480</i></center></td>
+</tr></table>
+<pre> $R:  Range-Checking Switch
+ ----------------------------
+Abilita e disabilita la generazione di codice per il controllo dei range.
+
+   Sintassi:  {$R+} o {$R-}
+   Default:   {$R-}
+   Tipo:      Locale
+   Menu:      Options|Compiler|<a href="0101.html">Range-checking</a>
+
+ Lo stato $R+:
+Nello stato $R+
+ - tutte le espressioni di indice su array e stringhe sono controllate
+   affinche' ricadano nei limiti definiti
+ - tutti gli assegnamenti di scalare o variabili di intervallo sono
+   controllate affinche' siano nel range definito
+
+Se un controllo di range fallisce, il programma termina e mostra un
+messaggio di errore run-time.
+
+$R+ non si applica alle procedure Inc e Dec.
+
+Abilitare il range checking rallenta il programma e lo rende piu' grande.
+Usate questa opzione durante il debugging, e poi disabilitatela quando il
+programma e' corretto.
+
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/0480.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:38:39 GMT -->
+</html>

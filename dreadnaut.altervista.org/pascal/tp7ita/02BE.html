@@ -1,0 +1,32 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/02BE.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:40:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 02BE</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>02BE</i></center></td>
+</tr></table>
+<pre> +----------------------+
+ | Stack overflow error |
+ +----------------------+
+
+Il programma restituisce questo errore all'entrata in una funzione
+o in una procedura compilata con la direttiva <a href="0481.html">{$S+}</a>,
+quando non c'e' abbastanza spazio nello stack per allocare le variabili
+locali del sottoprogramma.
+
+Per risolvere il problema, e' possibile aumentare la dimensione dello
+stack con la <a href="0489.html">direttiva $M</a> del compilatore.
+
+L'errore di Stack Overflow puo' essere anche causato da una funzione che
+va in ricorsione infinita, o da una procedura in assembler che non mantiene
+lo stack in modo corretto.
+
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/02BE.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:40:05 GMT -->
+</html>

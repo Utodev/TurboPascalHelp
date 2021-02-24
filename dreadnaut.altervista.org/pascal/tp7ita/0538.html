@@ -1,0 +1,59 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/0538.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:38:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 0538</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>0538</i></center></td>
+</tr></table>
+<pre> ClrScr (procedure)     (<a href="0694.html">unit Crt</a> e unit WinCrt)
+ --------------------------------------------------
+Pulisce la finestra attiva e riporta il cursore nell'angolo in alto a sinistra.
+
+ Dichiarazione:
+ procedure ClrScr;
+
+ Target:
+Windows, Real, Protected
+
+ Note:
+Setta tutte le posizione di carattere a spazi vuoti (blanks) utilizzanto
+gli attributi del testo definiti al momento. Percio', se TextBackground
+non e' nero, l'intero schermo diventa del colore di sfondo. Questo accade
+anche ai caratteri cancellati da ClrEol, InsLine e DelLine, e alle linee
+vuote create dallo scrolling.
+
+ClrScr e' relativo alla finestra. LE seguenti righe di programma definiscono
+una finestra di testo e svuotano un rettangolo 60x20 alle coordinate (1, 1).
+
+ Window(1, 1, 60, 20);
+ ClrScr;
+
+ Codice esempio:
+
+<table width="100%" bgcolor="#00007f" ><tr><td><font color="#ffff00"><pre><font color="#ffff00">
+ <font color="#c0c0c0">{ClrScr.PAS}</font>
+
+ <font color="#c0c0c0">{Esempio per la procedura ClrScr.}</font>
+
+ <font color="#c0c0c0">{ Sotto Windows usare: }</font>
+ <font color="#c0c0c0">{ uses WinCrt; }</font>
+
+ <font color="#ffffff"><b>uses</b></font> Crt;
+
+ <font color="#ffffff"><b>begin</b></font>
+  Writeln(<font color="#00ffff">'Hello.   Please the <enter> key...'</font>);
+  Readln;
+  ClrScr;
+ <font color="#ffffff"><b>end</b></font>.
+
+
+</font></font></td></tr></table>
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/0538.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:38:40 GMT -->
+</html>

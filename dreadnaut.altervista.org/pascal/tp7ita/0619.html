@@ -1,0 +1,53 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/0619.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 0619</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>0619</i></center></td>
+</tr></table>
+<pre> set (reserved word)
+ ---------------------
+
+ Sintassi:
+   set of type
+
+ Note:
+Il tipo base di un insieme (set) deve essere un tipo <a href="060C.html">ordinal</a> con non
+piu' di 256 valori.
+
+I valori ordinali dei limiti superiore e inferiori del tipo base devono
+essere fra 0 e 255.
+
+Un costruttore di insieme, che denota un valore di tipo set, e formato
+scrivendo <a href="05EF.html">espressioni</a> fra parentesi quadre. Ogni espressione definisce
+il un valore dell'inisieme.
+
+La notazione [ ] rappresenta l'insieme vuoto, che e' compatibile con tutti
+i tipi di insieme.
+
+ Esempi:
+
+ { Tipi insieme }
+   type
+     Day = (Sun, Mon, Tue, Wed, Thu, Fri, Sat);
+     CharSet = set of Char;
+     Digits = set of 0..9;
+     Days = set of Day;
+
+ { Costruttori di insieme }
+   ['0'..'9', 'A'..'Z', 'a'..'z', '_']
+   [1, 5, I + 1 .. J - 1]
+   [Mon..Fri]
+
+ Vedere anche:
+ <a href="05C5.html">Set-type constants</a>
+
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/0619.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:52 GMT -->
+</html>

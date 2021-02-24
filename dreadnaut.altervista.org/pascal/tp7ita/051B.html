@@ -1,0 +1,64 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/051B.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 051B</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>051B</i></center></td>
+</tr></table>
+<pre> Val (procedure)
+ ----------------
+Converte un valore stringa nella sua rappresentazione numerica.
+
+ Dichiarazione:
+ procedure Val(S; var V; var Code: Integer);
+dove:
+  S     variabile di tipo stringa; deve essere una sequenza di caratteri
+        che forma un unico numero (eventualmente con segno)
+  V     variabile di tipo Integer o Real
+  Code  variabile di tipo Integer.
+
+ Target:
+Windows, Real, Protected
+
+ Note:
+Converte il valora della stringa S nella sua rappresentazione numerica
+come se venisse letta da un file di testo con Read.
+
+ Vedere anche:
+ <a href="04F7.html">Str</a>
+
+ Codice esempio:
+
+<table width="100%" bgcolor="#00007f" ><tr><td><font color="#ffff00"><pre><font color="#ffff00">
+ <font color="#c0c0c0">{Val.PAS}</font>
+
+ <font color="#c0c0c0">{Esempio per la procedura Val.}</font>
+
+ <font color="#c0c0c0">{ For Windows: }</font>
+ <font color="#c0c0c0">{ uses WinCrt; }</font>
+
+ <font color="#ffffff"><b>var</b></font> I, Code: Integer;
+ <font color="#ffffff"><b>begin</b></font>
+ <font color="#c0c0c0">{ Prende il testo dalla linea di comando }</font>
+  Val(ParamStr(<font color="#00ffff">1</font>), I, Code);
+  <font color="#c0c0c0">{ Errore durante la conversione a intero? }</font>
+  <font color="#ffffff"><b>if</b></font> code <> <font color="#00ffff">0</font> <font color="#ffffff"><b>then</b></font>
+    Writeln(<font color="#00ffff">'Error at position: '</font>, Code)
+  <font color="#ffffff"><b>else</b></font>
+    Writeln(<font color="#00ffff">'Value = '</font>, I);
+  Readln;
+ <font color="#ffffff"><b>end</b></font>.
+
+
+</font></font></td></tr></table>
+
+
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/051B.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:52 GMT -->
+</html>

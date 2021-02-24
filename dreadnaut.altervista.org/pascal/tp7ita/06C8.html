@@ -1,0 +1,33 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/06C8.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:38:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 06C8</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>06C8</i></center></td>
+</tr></table>
+<pre> Variabili di tipo DateTime
+ ---------------------------
+Le procedure UnpackTime e PackTime usano variabili di tipo DateTime per
+esaminare a costruire valori di 4 byte contenenti data e ora compattate
+per le procedure GetFTime, SetFTime, FindFirst e FindNext:
+
+ type
+   { record DateTime usato da PackTime e UnpackTime }
+   DateTime = record
+     Year,Month,Day,Hour,
+     Min,Sec: Word;
+   end;
+
+
+ Vedere anche:
+ <a href="06AB.html">Dos unit</a>
+
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/06C8.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:38:42 GMT -->
+</html>

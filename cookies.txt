@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.dreadnaut.altervista.org	TRUE	/	FALSE	1999999999	__cfduid	de6a0162b0d3f7f65581f74382fd421591614181208
+dreadnaut.altervista.org	TRUE	/	FALSE	1999999999	SameSite	Lax
+

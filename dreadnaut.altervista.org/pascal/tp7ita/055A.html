@@ -1,0 +1,70 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/055A.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 055A</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>055A</i></center></td>
+</tr></table>
+<pre> FilePos (function)
+ -------------------
+Ritorna la posizione corrente in un file.
+
+ Dichiarazione:
+ function FilePos(var F): Longint;
+
+ Target:
+Windows, Real, Protected
+
+ Note:
+F e' una variabile di tipo file. Se la posizione corrente e' all'inizio
+del file, FilePos(F) restituisce 0.  Se la posizione corrente e' alla
+fine del file (e cioe' se Eof(F) e' True) allora FilePos(F) e' uguale
+a FileSize(F).
+
+Con {$I-}, IOResult restituisce 0 se l'operazione ha avuto successo;
+altrimenti ritorna un codice di errore diverso da zero.
+
+ Restrinzioni:
+ - Il file deve essere aperto.
+ - Non puo' essere usata su file text.
+
+ Vedere anche:
+ <a href="055C.html">FileSize</a>
+ <a href="04D1.html">Seek</a>
+
+ Codice esempio:
+
+<table width="100%" bgcolor="#00007f" ><tr><td><font color="#ffff00"><pre><font color="#ffff00">
+ <font color="#c0c0c0">{FilePos.PAS}</font>
+
+ <font color="#c0c0c0">{ Esempio per le funzioni FilePos e FileSize, e per
+   la procedura Seek }</font>
+
+ <font color="#c0c0c0">{ sotto Windows utilizzare: }</font>
+ <font color="#c0c0c0">{ uses WinCrt;              }</font>
+
+ <font color="#ffffff"><b>var</b></font>
+   f: <font color="#ffffff"><b>file</b></font> <font color="#ffffff"><b>of</b></font> Byte;
+   size : Longint;
+ <font color="#ffffff"><b>begin</b></font>
+   <font color="#c0c0c0">{ Il nome del file viene preso da linea di comando }</font>
+   Assign(f, ParamStr(<font color="#00ffff">1</font>));
+   Reset(f);
+   size := FileSize(f);
+   Writeln(<font color="#00ffff">'File size in bytes: '</font>,size);    <font color="#c0c0c0">{ dimensione in byte }</font>
+   Writeln(<font color="#00ffff">'Seeking halfway into file...'</font>); <font color="#c0c0c0">{ seek a meta' file  }</font>
+   Seek(f,size <font color="#ffffff"><b>div</b></font> <font color="#00ffff">2</font>);
+   Writeln(<font color="#00ffff">'Position is now '</font>,FilePos(f));  <font color="#c0c0c0">{ posizione corrente }</font>
+   Close(f);
+ <font color="#ffffff"><b>end</b></font>.
+
+</font></font></td></tr></table>
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/055A.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:48 GMT -->
+</html>

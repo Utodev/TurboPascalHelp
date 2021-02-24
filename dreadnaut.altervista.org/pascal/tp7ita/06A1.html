@@ -1,0 +1,67 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/06A1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 06A1</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>06A1</i></center></td>
+</tr></table>
+<pre>  Costanti utilizzate come parametri per TextMode (<a href="0694.html">Crt unit</a>)
+ ------------------------------------------------------------
+
+ Costante | Valore | Modalita'        |  Scheda
+ ==================================================
+ BW40     |   0    | 40x25 B/N        |   CGA
+ CO40     |   1    | 40x25 Colore     |   CGA
+ BW80     |   2    | 80x25 B/N        |   CGA
+ CO80     |   3    | 80x25 Colore     |   CGA
+ Mono     |   7    | 80x25 B/N su MDA |   HGC
+ Font8x8  |  256   | modalita' per    |   EGA/VGA
+          |        | 43/50 linee      |
+
+Costanti mantenute per compatibilita con la versione 3.0
+    C40  = CO40;
+    C80  = CO80;
+
+BW40, CO40, BW80 e CO80 rappresentano le quattro modalita' testo
+a colori supportate dall'IBM PC Color/Graphics Adapter (CGA).
+
+Mono rappresenta l'unica modalita' testo bianco-e-nero da esso
+supportata.
+
+Dopo aver utilizzato una modalita' grafica, <a href="06A8.html">LastMode</a> restituisce
+l'ultima modalita' testo attiva.
+
+ Vedere anche:
+ <a href="0694.html">Crt unit</a>
+
+- eof -
+
+ Commenti:
+ 
+Altre costanti non definite nella unit crt ma utilizzabili con TextMode:
+
+ const
+  Text25 =   3; { eventualmente gia' definita in crt come CO80 }
+  Text50 = 259;
+
+Eseguendo il programma in una console/prompt windows, solo le modalita'
+80x25 e 80x50 producono effettivi cambiamenti modificando le dimensioni
+della finestra
+
+ Costante      | Valore | Dimensione finestra
+ =============================================
+ Text25 (CO80) |   3    |        80x25
+ Text50        |  259   |        80x50 
+ 
+-- 
+Dreadnaut
+
+</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/06A1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:52 GMT -->
+</html>

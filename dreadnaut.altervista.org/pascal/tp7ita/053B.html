@@ -1,0 +1,56 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/053B.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:38:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 053B</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>053B</i></center></td>
+</tr></table>
+<pre> Copy (function)
+ ----------------
+Restituisce una sottostringa di una stringa
+
+ Dichiarazione:
+ function Copy(S: String; Index: Integer; Count: Integer): String;
+
+ Target:
+Windows, Real, Protected
+
+ Note:
+S e' un'espressione di tipo stringa. Index e Count sono espressione di tipo
+intero. Copy restituisce una stringa contenente Count caratteri partendo
+dall'Index-esimo carattere di S.
+
+Se Index e' piu' grande della lunghezza di S, Copy ritorna una stringa vuota.
+Se Count specifica piu' caratteri di quanti ne rimangano dopo l'Index-esima
+posizione, sono restituiti soltanto i caratteri rimanenti.
+
+ Vedere anche:
+ <a href="0539.html">Concat</a>
+ <a href="0542.html">Delete</a>
+ <a href="059D.html">Insert</a>
+ <a href="0490.html">Length</a>
+ <a href="04B8.html">Pos</a>
+
+ Codice esempio:
+
+<table width="100%" bgcolor="#00007f" ><tr><td><font color="#ffff00"><pre><font color="#ffff00">
+ <font color="#c0c0c0">{Copy.PAS}</font>
+
+ <font color="#c0c0c0">{Esempio per la funzione Copy.}</font>
+
+ <font color="#ffffff"><b>var</b></font> S: <font color="#ffffff"><b>String</b></font>;
+ <font color="#ffffff"><b>begin</b></font>
+   S := <font color="#00ffff">'ABCDEF'</font>;
+   S := Copy(S, <font color="#00ffff">2</font>, <font color="#00ffff">3</font>); <font color="#c0c0c0">{ 'BCD' }</font>
+ <font color="#ffffff"><b>end</b></font>.
+
+</font></font></td></tr></table>
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/053B.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:38:40 GMT -->
+</html>

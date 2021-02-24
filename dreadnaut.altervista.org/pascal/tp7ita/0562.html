@@ -1,0 +1,61 @@
+<html>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/0562.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><title>Turbo Pascal Help - 0562</title>
+<meta name="GENERATOR" content="Dreadnaut's Tph2Html Converter">
+<style type="text/css"><!--a:hover {background-color: #000090; color: #ffff00; text-decoration: none}--></style></head>
+<body bgcolor="#009999" text="#000000" link="#ffff00" alink="#ffff70" vlink="#d0ff00">
+<table width="100%" border="1"><tr><td width="33%"><center><b>Turbo Pascal Help (turbo.tph)</b></center></td>
+<td width="60%">&nbsp;<a href="index.html">Index</a></td>
+<td><center><i>0562</i></center></td>
+</tr></table>
+<pre> FindNext (procedure)     (<a href="06AB.html">Dos unit</a> e <a href="06AA.html">WinDos unit</a>)
+ ----------------------------------------------------
+Cerca la successiva occorrenza che corrisponde al nome e agli attributi
+specificati in una precedente chiamata di FindFirst.
+
+ Dichiarazione:
+ procedure FindNext(var F: TSearchRec);
+
+ Target:
+Windows, Real, Protected
+
+ Note:
+Gli errori sono riportati in <a href="06C7.html">DosError</a>. Il solo errore possibile e' 18 (non
+ci sono altri file).
+
+ Vedere anche:
+ <a href="06BD.html">File-attribute constants</a>
+ <a href="0559.html">FileExpand</a>
+ <a href="0561.html">FindFirst</a>
+ <a href="06C6.html">TSearchRec</a>
+
+ Codice esempio:
+
+<table width="100%" bgcolor="#00007f" ><tr><td><font color="#ffff00"><pre><font color="#ffff00">
+ <font color="#c0c0c0">{Findfrst.PAS}</font>
+
+ <font color="#c0c0c0">{Esempio per le procedure FindFirst e FindNext.}</font>
+
+ <font color="#c0c0c0">{ Sotto Windows usare: }</font>
+ <font color="#c0c0c0">{ uses WinDos,WinCrt; }</font>
+
+ <font color="#ffffff"><b>uses</b></font> Dos;
+
+ <font color="#ffffff"><b>var</b></font>
+  DirInfo: SearchRec;       <font color="#c0c0c0">{ Sotto Windows usare TSearchRec }</font>
+ <font color="#ffffff"><b>begin</b></font>                       <font color="#c0c0c0">{ Sotto Windows usare faArchive }</font>
+  FindFirst(<font color="#00ffff">'*.PAS'</font>, Archive, DirInfo); <font color="#c0c0c0">{ uguale a DIR *.PAS }</font>
+  <font color="#ffffff"><b>while</b></font> DosError = <font color="#00ffff">0</font> <font color="#ffffff"><b>do</b></font>
+  <font color="#ffffff"><b>begin</b></font>
+    Writeln(DirInfo.Name);
+    FindNext(DirInfo);
+  <font color="#ffffff"><b>end</b></font>;
+ <font color="#ffffff"><b>end</b></font>.
+
+</font></font></td></tr></table>
+- eof -</pre></body>
+
+<!-- Mirrored from dreadnaut.altervista.org/pascal/tp7ita/0562.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Feb 2021 15:39:48 GMT -->
+</html>
